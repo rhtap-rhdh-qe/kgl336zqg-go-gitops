@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: kgl336zqg-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: kgl336zqg-go 
+  name: kgl336zqg-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: kgl336zqg-go
+    weight: 100 
